@@ -47,7 +47,9 @@ type GRPCGift struct {
 }
 
 func NewGRPCGift() *GRPCGift {
-	h := &GRPCGift{}
+	h := &GRPCGift{
+		svcGift: new(service.Gift),
+	}
 
 	return h
 }
