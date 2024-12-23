@@ -34,6 +34,7 @@ import (
 	brkNats "github.com/go-sicky/sicky/broker/nats"
 	"github.com/go-sicky/sicky/driver"
 	rgConsul "github.com/go-sicky/sicky/registry/consul"
+	"github.com/go-sicky/sicky/runtime"
 	srvGRPC "github.com/go-sicky/sicky/server/grpc"
 	"github.com/go-sicky/sicky/service/sicky"
 )
@@ -48,7 +49,8 @@ type ConfigDef struct {
 	Registry struct {
 		Consul *rgConsul.Config `json:"consul" yaml:"consul" mapstructure:"consul"`
 	} `json:"registry" yaml:"registry" mapstructure:"registry"`
-	Service *sicky.Config `json:"service" yaml:"service" mapstructure:"service"`
+	Runtime *runtime.Config `json:"runtime" yaml:"runtime" mapstructure:"runtime"`
+	Service *sicky.Config   `json:"service" yaml:"service" mapstructure:"service"`
 	Driver  struct {
 		DB    *driver.DBConfig    `json:"db" yaml:"db" mapstructure:"db"`
 		Redis *driver.RedisConfig `json:"redis" yaml:"redis" mapstructure:"redis"`
